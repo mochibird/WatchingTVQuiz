@@ -1,6 +1,10 @@
 <?php
 
+namespace WatchingTV;
+
 require_once('ChannelViewingPeriod.php');
+
+use WatchingTV\ChannelViewingPeriod;
 class Calculator
 {
     public const NUM_OF_SIXTY_MINUTES = 60;

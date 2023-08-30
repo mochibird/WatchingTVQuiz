@@ -1,19 +1,24 @@
 <?php
 
-require_once('Conversion.php');
+namespace WatchingTV;
+
+require_once('Converter.php');
 require_once('Calculator.php');
+
+use WatchingTV\Converter;
+use WatchingTV\Calculator;
 
 class ChannelViewingPeriod
 {
     public function __construct(
         private array $argument,
-        private ?Conversion $conversion = null,
+        private ?Converter $converter = null,
         private ?Calculator $calculator = null,
         private array $viewingPeriod = [],
         private float $viewingPeriodTotal = 0
     ) {
         $this->argument = $argument;
-        $this->conversion = new Conversion();
+        $this->converter = new Converter();
         $this->calculator = new Calculator();
     }
     public function getArgument(): array
@@ -43,7 +48,7 @@ class ChannelViewingPeriod
     }
     public function conversionToArgument(): void
     {
-        $this->conversion->dealConversion($this);
+        $this->converter->dealConversion($this);
     }
 
     private function resultToDisPlay(): void

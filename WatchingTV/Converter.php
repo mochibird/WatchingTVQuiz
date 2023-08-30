@@ -1,7 +1,11 @@
 <?php
 
+namespace WatchingTV;
+
 require_once('ChannelViewingPeriod.php');
-class Conversion
+
+use WatchingTV\ChannelViewingPeriod;
+class Converter
 {
     public const NUM_OF_FIRST_ARGUMENT = 1;
     public const SPLIT_LENGTH = 2;
